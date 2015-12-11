@@ -5,7 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b8d387d0c6ee46f883aa25fd55bc2a41" Name="Diagram1" >
-        </Diagram>
+        <EntityTypeShape EntityType="TestModel.EventMsg" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestModel.ImageMsg" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestModel.LinkMsg" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TestModel.LocationMsg" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestModel.TextMsg" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestModel.VideoMsg" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TestModel.VoiceMsg" Width="1.5" PointX="6.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

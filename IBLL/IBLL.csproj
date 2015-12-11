@@ -40,6 +40,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="base\IBaseBLL.cs" />
+    <Compile Include="IEventMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IImageMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ILinkMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ILocationMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITextMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVideoMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVoiceMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs">
       <AutoGen>True</AutoGen>

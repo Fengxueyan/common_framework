@@ -11,9 +11,13 @@ namespace WebHelper
 {
     public class BaseController : Controller
     {
-
-        protected IPhoneBookBLL phoneBookBLL;
-
+        public IEventMsgBLL EventMsgBll;
+        public IImageMsgBLL ImageMsgBll;
+        public ILinkMsgBLL LinkBll;
+        public ILocationMsgBLL LocationMsgBll;
+        public ITextMsgBLL TextMsgBll;
+        public IVideoMsgBLL VideoMsgBll;
+        public IVoiceMsgBLL VoiceMsgBll;
 
         #region 2.0 封装ajax的响应方法
 

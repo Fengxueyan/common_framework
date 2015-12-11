@@ -4,24 +4,335 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="TestModelStoreContainer">
-          </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="TestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TestModelStoreContainer">
+    <EntitySet Name="EventMsg" EntityType="TestModel.Store.EventMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImageMsg" EntityType="TestModel.Store.ImageMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LinkMsg" EntityType="TestModel.Store.LinkMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationMsg" EntityType="TestModel.Store.LocationMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TextMsg" EntityType="TestModel.Store.TextMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VideoMsg" EntityType="TestModel.Store.VideoMsg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VoiceMsg" EntityType="TestModel.Store.VoiceMsg" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="EventMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Event" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Latitude" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Longitude" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Precision" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventKey" Type="nchar" Nullable="false" MaxLength="Max" />
+    <Property Name="Ticket" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImageMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PicUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LinkMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="LocationMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location_X" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Location_Y" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Scale" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Label" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TextMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VideoMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MediaId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ThumbMediaId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VoiceMsg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MediaId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Format" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgId" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ToUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FromUserName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CreateTime" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="MsgType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Recognition" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TestEntities" annotation:LazyLoadingEnabled="true" >
-          </EntityContainer>
+          <EntitySet Name="EventMsg" EntityType="TestModel.EventMsg" />
+          <EntitySet Name="ImageMsg" EntityType="TestModel.ImageMsg" />
+          <EntitySet Name="LinkMsg" EntityType="TestModel.LinkMsg" />
+          <EntitySet Name="LocationMsg" EntityType="TestModel.LocationMsg" />
+          <EntitySet Name="TextMsg" EntityType="TestModel.TextMsg" />
+          <EntitySet Name="VideoMsg" EntityType="TestModel.VideoMsg" />
+          <EntitySet Name="VoiceMsg" EntityType="TestModel.VoiceMsg" />
+        </EntityContainer>
+        <EntityType Name="EventMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Event" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Precision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EventKey" Type="String" Nullable="false" Unicode="true" FixedLength="true" MaxLength="Max" />
+          <Property Name="Ticket" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImageMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PicUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LinkMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LocationMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location_X" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Location_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Scale" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TextMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VideoMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MediaId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbMediaId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VoiceMsg">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MediaId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Format" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ToUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromUserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MsgType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Recognition" Type="String" Nullable="false" Unicode="true" FixedLength="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="TestEntities" >
-          </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="TestEntities">
+    <EntitySetMapping Name="EventMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.EventMsg)">
+        <MappingFragment StoreEntitySet="EventMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Precision" ColumnName="Precision" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+          <ScalarProperty Name="EventKey" ColumnName="EventKey" />
+          <ScalarProperty Name="Ticket" ColumnName="Ticket" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.ImageMsg)">
+        <MappingFragment StoreEntitySet="ImageMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PicUrl" ColumnName="PicUrl" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.LinkMsg)">
+        <MappingFragment StoreEntitySet="LinkMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.LocationMsg)">
+        <MappingFragment StoreEntitySet="LocationMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location_X" ColumnName="Location_X" />
+          <ScalarProperty Name="Location_Y" ColumnName="Location_Y" />
+          <ScalarProperty Name="Scale" ColumnName="Scale" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.TextMsg)">
+        <MappingFragment StoreEntitySet="TextMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.VideoMsg)">
+        <MappingFragment StoreEntitySet="VideoMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="ThumbMediaId" ColumnName="ThumbMediaId" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoiceMsg">
+      <EntityTypeMapping TypeName="IsTypeOf(TestModel.VoiceMsg)">
+        <MappingFragment StoreEntitySet="VoiceMsg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="Format" ColumnName="Format" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="ToUserName" ColumnName="ToUserName" />
+          <ScalarProperty Name="FromUserName" ColumnName="FromUserName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+          <ScalarProperty Name="Recognition" ColumnName="Recognition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -35,7 +346,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
       </DesignerInfoPropertySet>
     </Options>

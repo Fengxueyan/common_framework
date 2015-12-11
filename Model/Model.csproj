@@ -47,7 +47,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseMsg.cs" />
+    <Compile Include="EventMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventTypeEnum.cs" />
+    <Compile Include="ImageMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MsgType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseMsg\BaseResponseMsg.cs" />
+    <Compile Include="ResponseMsg\IGetResponseStr.cs" />
+    <Compile Include="ResponseMsg\ResponseVoiceMsg.cs" />
+    <Compile Include="ResponseMsg\ResponseVideoMsg.cs" />
+    <Compile Include="ResponseMsg\ResponsemusicMsg.cs" />
+    <Compile Include="ResponseMsg\ResponseNewsMsg.cs" />
+    <Compile Include="ResponseMsg\ResponseImageMsg.cs" />
+    <Compile Include="ResponseMsg\ResponseTextMsg.cs" />
     <Compile Include="Test.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +85,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Test.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TextMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VideoMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceMsg.cs">
+      <DependentUpon>Test.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +121,9 @@
       <DependentUpon>Test.edmx</DependentUpon>
       <LastGenOutput>Test.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test.edmx.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

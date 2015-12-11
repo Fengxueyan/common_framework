@@ -40,6 +40,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\IBaseDAL.cs" />
+    <Compile Include="IEventMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IImageMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ILinkMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ILocationMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITextMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVideoMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IVoiceMsgDAL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs">
       <AutoGen>True</AutoGen>

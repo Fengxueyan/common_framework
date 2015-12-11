@@ -20,14 +20,14 @@ WriteHeader(codeStringGenerator, fileManager);
 
 foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection))
 {
-    fileManager.StartNewFile(entity.Name + ".cs");
+    fileManager.StartNewFile(entity.Name + "BLL.cs");
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
 <#=codeStringGenerator.EntityClassOpening(entity)#>
 {
 	protected I<#=code.Escape(entity)  #>DAL dal;
-	public PhoneBookBLL(I<#=code.Escape(entity)  #>DAL dal)
+	public <#=code.Escape(entity)#>BLL(I<#=code.Escape(entity)  #>DAL dal)
     {
         this.dal = dal;
         base.baseDAL = dal;

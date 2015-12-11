@@ -25,5 +25,12 @@ namespace Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<EventMsg> EventMsg { get; set; }
+        public DbSet<ImageMsg> ImageMsg { get; set; }
+        public DbSet<LinkMsg> LinkMsg { get; set; }
+        public DbSet<LocationMsg> LocationMsg { get; set; }
+        public DbSet<TextMsg> TextMsg { get; set; }
+        public DbSet<VideoMsg> VideoMsg { get; set; }
+        public DbSet<VoiceMsg> VoiceMsg { get; set; }
     }
 }

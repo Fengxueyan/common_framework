@@ -40,14 +40,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="base\BaseBLL.cs" />
+    <Compile Include="EventMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImageMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LinkMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Test.tt</DependentUpon>
     </Compile>
+    <Compile Include="TextMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VideoMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceMsgBLL.cs">
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bead6440-0ef5-4c8b-b8a0-4cc79c4a250f}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IBLL\IBLL.csproj">
       <Project>{e92d787a-5749-4c62-bf1c-443a08122818}</Project>
       <Name>IBLL</Name>
